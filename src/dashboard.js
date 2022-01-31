@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 function Dashboard() {
   const TITULO = 'Quantidade de cadastros realizados no primeiro semestre';
+  const ANIMACAO = { duration: 1000, easing: 'out', startup: true };
 
   const [dados, setDados] = useState([
     ['Mês', 'Quantidade'],
@@ -49,7 +50,19 @@ function Dashboard() {
           chartArea: { width: '50%' },
           hAxis: { title: 'Quantidade' },
           vAxis: { title: 'Mês' },
-          animation: { duration: 1000, easing: 'out', startup: true },
+          animation: ANIMACAO,
+        }}
+      />
+      <Chart
+        width={'400px'}
+        height={'300px'}
+        chartType={'LineChart'}
+        data={dados}
+        options={{
+          title: TITULO,
+          hAxis: { title: 'Mês' },
+          vAxis: { title: 'Quantidade' },
+          animation: ANIMACAO,
         }}
       />
     </div>
