@@ -33,11 +33,24 @@ function Dashboard() {
         options={{ title: TITULO, is3D: true }}
       />
       <Chart
-        width={'400'}
-        height={'300'}
+        width={'400px'}
+        height={'300px'}
         chartType={'PieChart'}
         data={dados}
         options={{ title: TITULO, pieHole: 0.4 }}
+      />
+      <Chart
+        width={'400px'}
+        height={'300px'}
+        chartType={'BarChart'}
+        data={dados}
+        options={{
+          title: TITULO,
+          chartArea: { width: '50%' },
+          hAxis: { title: 'Quantidade' },
+          vAxis: { title: 'Mês' },
+          animation: { duration: 1000, easing: 'out', startup: true },
+        }}
       />
     </div>
   );
