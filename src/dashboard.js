@@ -65,6 +65,18 @@ function Dashboard() {
           animation: ANIMACAO,
         }}
       />
+      <Chart
+        width={'400px'}
+        height={'300px'}
+        chartType={'AreaChart'}
+        data={dados}
+        options={{
+          title: TITULO,
+          hAxis: { title: 'Mês' },
+          vAxis: { title: 'Quantidade' },
+          animation: ANIMACAO,
+        }}
+      />
     </div>
   );
 }
